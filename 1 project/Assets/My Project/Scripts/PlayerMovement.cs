@@ -8,12 +8,12 @@ using UnityEngine.UIElements;
 using Object = System.Object;
 
 [RequireComponent(typeof(Rigidbody))]
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f; // Скорость движения, а в дальнейшем ускорение
     private Vector3 _MoveDirection; // Направление движения
     private Vector3 _inputAxis;
-
     private Rigidbody _body; 
 
     private void Start()
@@ -22,8 +22,6 @@ public class PlayerMovement : MonoBehaviour
         _body = GetComponent<Rigidbody>();
 
         PlayerInputs.OnInput += Move;
-        
-
     }
 
     private void Move(Vector3 input)

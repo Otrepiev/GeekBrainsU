@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    public GameObject player; // тут объект игрока
     private Vector3 offset;  
 
     void Start () 
     {        
-        offset = transform.position - _target.transform.position;
+        offset = transform.position - player.transform.position;
     }
 
     void LateUpdate () 
     {        
-        transform.position = _target.transform.position + offset;
+        transform.position = player.transform.position + offset;
     }
 }
